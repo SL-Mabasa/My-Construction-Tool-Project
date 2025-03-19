@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "description" content = "Variation Order">
+        <meta name = "keywords" content = "Variation Order">
+        <meta name = "author" content = "Sicelo Mabasa">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Construction Tool</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/fav.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/product.css' %}" rel="stylesheet" />
+
+        <script>
+          function addCart(){
+            let product = document.getElementById("bt3").name;
+            //product = String(product);
+            let quantity = document.getElementById("qty").value;
+            quantity = Number(quantity);
+            let rate = document.getElementById("bt3").value;
+            rate = Number(rate);
+            let price = rate * quantity;
+            //price = String(price);
+            
+
+            let item = {
+              product: product,
+              price: price,
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            alert("Item added to cart!");
+          }
+        </script>
+
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Construction Tool</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="Home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Tools">Tools</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Materials">Materials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Products">Products</a>
+                          </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Products</h1>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">Check out our amazing products</h2>
+                        <p class="text-white-50">
+                            To help make your construction journey easier <br>
+                            With our Solar Power Systems
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Section-->
+        <section class="py-5">
+          <div class="container px-4 px-lg-5 mt-4">
+              <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-1 justify-content-center">
+                  
+    
+                  <div class="col mb-5">
+                      <div class="card h-100">
+                          <!-- Sale badge-->
+                          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem"></div>
+                          <!-- Product image-->
+                          <img class="card-img-top" src ="{% static 'assets/img/bt3.jpg' %}" height = "720">
+                          <!-- Product details-->
+                          <div class="card-body p-4">
+                              <div class="text-center">
+                                  <!-- Product name 003-->
+                                  <h5 class="fw-bolder">Solar Batteries</h5>
+                                  <div >
+                                    <label for = "bt3" class="text-black-90"> Battery Options </label>
+                                    <select id = "bt3" >
+                                        <option name = "Ecco 5kW" value = "15000"> Ecco 5kW Battery R15 000 </option>
+                                        <option name = "Sunsync 5kW" value = "22500"> Sunsync 5kW Battery R22 500</option>
+                                        <option name = "Deye 5kW" value = "25000"> DEYE 5kW Battery R25 000</option>
+                                    </select>
+                                </div> 
+                            
+                              </div>
+                          </div>
+                          <!-- Product actions-->
+                          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                              <div class="text-center"><a href="DEV" class="btn btn-outline-dark mt-auto" onclick= "addCart()">Add to Cart</a></div>
+                          </div>
+
+                          <div class="col-lg-16">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-center">
+                                        <h3 class="text-white">Products</h3>
+                                        <h5 class="mb-0 text-white-50">
+                                            <h6 style = "color:white">Sunsync</h6>
+                                            <p style = "color:white">
+                                                Solar Batteries are essential for your solar power system.
+                                                <br>
+                                                Safety is our top priority.
+                                            </p>
+
+                                            <h6 style = "color:white">Ecco</h6>
+                                            <p style = "color:white">
+                                                Solar Batteries are essential for your solar power system.
+                                                <br>
+                                                Safety is our top priority.
+                                            </p>
+
+                                            <h6 style = "color:white">DEYE</h6>
+                                            <p style = "color:white">
+                                                Solar Batteries are essential for your solar power system.
+                                                <br>
+                                                Safety is our top priority.
+                                            </p>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+
+      </section>
+        
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5"></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{%static 'js/scripts.js'%}"></script>
+    </body>
+</html>
