@@ -1,0 +1,4 @@
+django
+rembg
+pillow
+gunicorn
