@@ -3,7 +3,7 @@ import datetime
 
 # Create your models here.
 
-
+'''
 # Ecommerce 'Service Action VO' Details
 class action(models.Model):
     type = models.CharField(max_length= 100)
@@ -75,3 +75,4 @@ class order(models.Model):
     date_created = models.DateTimeField(default = datetime.datetime.now)
     def __str__(self):
         return self.product
+        '''
