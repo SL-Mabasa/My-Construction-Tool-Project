@@ -4,35 +4,7 @@ import datetime
 # Create your models here.
 
 '''
-# Ecommerce 'Service Action VO' Details
-class action(models.Model):
-    type = models.CharField(max_length= 100)
-    description = models.CharField(max_length=100)
-    quote = models.IntegerField
-    profit = models.IntegerField
-    rate = models.IntegerField
-    qty = models.IntegerField
-    unit = models.CharField(max_length=100)
-    amount = models.IntegerField
-    
-    '''rate = quote + (profit * quote)
-    amount = qty * rate'''
-    
-    def __str__(self):
-        '''info_1= f'{self.description}\n{self.quote}\n{self.profit}\n{self.rate}'
-        info_2 = f'\n{self.qty}\n{self.unit}\{self.amount}'
-        info = info_1 + info_2'''
-        return self.type
 
-# Ecommerce Service type fee
-'''class prices(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    description = models.ForeignKey(action, on_delete=models.CASCADE)
-    price = models.CharField(max_length=100)
-    date_created = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.price'''
 
 # Ecommerce Customer Details
 class customers(models.Model):
